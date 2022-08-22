@@ -1,5 +1,7 @@
 # CoreCodev-Taks
 # TASK
-[Week-5](./src/FirstWeek.md)
 
-[Week-6](./src/FifthWeek.md)
+[Week-1](./src/FirstWeek.md)
+
+[Week-2](./src/FifthWeek.md)
+
