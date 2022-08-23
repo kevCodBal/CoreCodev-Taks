@@ -87,12 +87,43 @@ enum ContractStatus {
 
 <img src='https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3e106878-ed87-4ccf-897d-5c98a9d1cf70/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220823%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220823T001637Z&X-Amz-Expires=86400&X-Amz-Signature=822e08c345ba77015959b46f1b93f55124a7722f300de9050810ef36be3e77d6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject' />
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7e0745b6-8f4f-4a56-b0cf-9416789128bb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220822%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220822T232017Z&X-Amz-Expires=86400&X-Amz-Signature=c9348845ada9b791e402da188a9dcbad7e0a355a17da77847182dd5def0c548f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject" width="500" height="300" />
  
-  #### The enum type
+  #### The Any type
  ```typescript
-let s: string;
-let empty = "";
-let abc = 'abc';
+let randomValue: any = 10;
+randomValue = 'Mateo';   // OK
+randomValue = true;      // OK
 
 ```
+#### The Any type
+ ```typescript
+let randomValue: any = 10;
+randomValue = 'Mateo';   // OK
+randomValue = true;      // OK
+
+//Remember that all the convenience of any comes at the cost of losing type safety. Type safety is one of the main motivations for using TypeScript. You should avoid using any when it's not necessary.
+```
+
+```
+#### Unknown type
+ ```typescript
+let randomValue: unknown = 10;
+randomValue = true;
+randomValue = 'Mateo';
+
+console.log(randomValue.name);  // Error: Object is of type unknown
+randomValue();                  // Error: Object is of type unknown
+randomValue.toUpperCase();      // Error: Object is of type unknown
+
+```
+
+#### Unknown type
+|  Type      | predicate        |
+| ---------- | ---------------- |
+|string | typeof s === "string" |
+|number | typeof n === "number" |
+|boolean | typeof b === "boolean" |
+|undefined | typeof undefined === "undefined"|
+|function | typeof f === "function" |
+|array | Array.isArray(a) |
+
