@@ -5,4 +5,4 @@
 
 [Week-5](./src/FifthWeek.md)
 
-[Week-6] (./src/6-week.md)
+[Week-6](./src/6-week.md)
